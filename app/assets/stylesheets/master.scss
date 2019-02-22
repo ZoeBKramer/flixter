@@ -1,30 +1,30 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Laila');
+
+$navyblue: #1f3345;
+$salmon: #f98888;
 
 .navbar {
-  font-family: "Helvetiva Neue", Helvetica;
-  font-weight: 200;
-  box-shadow: 0px 1px 3px #2a2a2a;
-  background: image_url('leaves.png');
+  font-family: 'Laila', serif;
+  font-weight: bold;
+  background: image_url('folk-pattern.png');
 }
 
 .navbar-inverse a.navbar-brand {
-  font-familt: "Helvetica Neue", Helvetica;
-  font-weight: 100;
-  color: #808080;
+  font-family: 'Laila', serif;
+  font-weight: bold;
+  color: #1f3345;
 }
 
 .nav-link{
-  color: #808080!important;
+  color: #1f3345!important;
 }
 
 .hero {
-  background: image_url('pastel_wallpaper.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: image_url('wheat.png');
   height: 370px;
-  box-shadow: 0px 3px 8px #2a2a2a;
+  margin-top: 20px;
+  box-shadow: 0px 0px 8px 8px #061d24;
 }
 
 h1, h2, h3, h4, h5, h6, .navbar {
@@ -32,22 +32,40 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .frosty {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(31, 51, 69, 0.65);
   color: white;
 }
 
 .frosty h1 {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: 'Laila', serif;
   font-weight: 100;
-  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+  text-shadow: rgba(249, 136, 136, 0.95) 1px 1px;
 }
 
 .frosty h2 {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: 'Laila', serif;
   font-weight: 200;
-  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
+  text-shadow: rgba(249, 136, 136, 0.95) 1px 1px;
 }
 
 .btn {
   border-radius: 0;
+}
+
+.feature {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: #f98888;
+}
+
+body {
+  background: image_url('folk-pattern.png');
+  font-family: 'Laila', serif;
+  font-weight: bold;
+}
+
+p {
+  color: $navyblue;
+  font-weight: bold;
 }
