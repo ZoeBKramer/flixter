@@ -1,1 +1,18 @@
 @import "bootstrap";
+
+.navbar {
+  font-family: "Helvetiva Neue", Helvetica;
+  font-weight: 200;
+  box-shadow: 0px 1px 3px #2a2a2a;
+  background: image_url('leaves.png');
+}
+
+.navbar-inverse a.navbar-brand {
+  font-familt: "Helvetica Neue", Helvetica;
+  font-weight: 100;
+  color: #808080;
+}
+
+.nav-link{
+  color: #808080!important;
+}
