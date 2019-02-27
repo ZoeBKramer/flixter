@@ -1,0 +1,36 @@
+$navyblue: #1f3345;
+$salmon: #f98888;
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#flex-content-container {
+  flex: 1;
+}
+
+#footer {
+  position: relative; 
+  width: 100%;
+  min-height: 100px;
+  background: image_url('wheat.png');
+  box-shadow: 0px 0px 8px 8px #061d24;
+  padding: 10px 0px;
+  margin-top: 30px;
+}
+
+#footer a {
+  color: $salmon;
+  font-weight: 100;
+}
+
+.container {
+  color: white;
+}
+
