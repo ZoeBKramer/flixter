@@ -1,3 +1,33 @@
-// Place all the styles related to the courses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$navyblue: #1f3345;
+$salmon: #f98888;
+
+.title a {
+  color: $salmon!important;
+}
+
+.description {
+  color: white;
+}
+
+hr {
+  background-color: $salmon;
+}
+
+.frosty {
+  background: rgba(31, 51, 69, 0.65);
+  padding: 50px;
+}
+
+.header {
+  color: white;
+  text-shadow: rgba(249, 136, 136, 0.95) 1px 1px;
+}
+
+.booyah-box-courses {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: image_url('wheat.png');
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding: 50px;
+  box-shadow: 0px 0px 8px 8px #061d24;
+}
