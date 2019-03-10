@@ -2,9 +2,11 @@
   <br />
   <div class="frosty col-10 offset-1 text-center">
     <br />
-    <h1>I am Zoe</h1>
+    <h1>Teach Yourself Something New</h1>
     <br />
-    <h2>I am your creator</h2>
+
+    <h2><%= link_to @randomcourse.title, course_path(@randomcourse) %></h2>
+
     <br />
     <%= link_to 'Learn More', courses_path, class: 'btn btn-success' %>
     <br /><br />
