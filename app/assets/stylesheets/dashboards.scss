@@ -1,0 +1,23 @@
+$navyblue: #1f3345;
+$salmon: #f98888;
+
+h1 {
+  color: $salmon!important;
+}
+
+h3 a{
+  color: white!important;
+}
+
+a:hover {
+  color: $salmon!important;
+}
+
+.row {
+  color: white;
+}
+
+.bluebackgroundtint {
+  background-color: rgba(31, 51, 69, 0.65);
+  padding: 20px;
+}
