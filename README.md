@@ -1,24 +1,39 @@
-# README
+# Set Up Vagrant
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Click [here](https://github.com/university-bootcamp/coding-environment/blob/master/windows-vagrant.md) to find the instructions for setting up Vagrant.
 
-Things you may want to cover:
+### Vagrant
 
-* Ruby version
+Between each of the coding sessions you do, especially if you restart your machine, you will need to run the following command to start your vagrant environment prior to connecting:
 
-* System dependencies
+`vagrant up`
 
-* Configuration
+When this command completes, run the vagrant ssh command to log in to Vagrant.
 
-* Database creation
+After this completes, you will be taken to a coding environment inside your virtual machine, and your terminal should contain the green [ENV].
 
-* Database initialization
+Running the `killall ruby` command in your terminal should quit all running Rails servers.
 
-* How to run the test suite
+**To ensure that your server is not running** -— If you visit the URL [http://localhost:3030](http://localhost:3030) in your browser, you should not see a web page load. You should ensure that your server is not running before starting new server windows.
 
-* Services (job queues, cache servers, search engines, etc.)
+**If you want to preview the application that is running within your coding environment**—Visiting the [http://localhost:3030](http://localhost:3030) from your web browser will allow you to do this.
 
-* Deployment instructions
+All the files within this folder inside the Vagrant environment will be automatically synced outside the Vagrant environment to folder inside the `coding-environment/src` folder that is located outside the virtual machine, usually on your Desktop.
 
-* ...
+# Set Up Flixter
+
+### Checking Out the Repo
+
+Check this repository out into your `coding-environment/src` folder. 
+
+### Create the Initial Database
+
+Connect to your Vagrant instance, change the directory `cd /vagrant/src/flixter`
+
+Run `rake db:create`
+
+### Starting Up Your Server
+
+In a separate terminal, change the directory `cd /vagrant/src/flixter`
+
+Start your server by running `rails server -b 0.0.0.0 -p 3000`
