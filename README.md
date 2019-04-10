@@ -1,3 +1,5 @@
+Click [here](https://flixter-zoe-kramer.herokuapp.com/) to visit Flixter. 
+
 # Set Up Vagrant
 
 Click [here](https://github.com/university-bootcamp/coding-environment/blob/master/windows-vagrant.md) to find the instructions for setting up Vagrant.
