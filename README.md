@@ -1,5 +1,21 @@
 Click [here](https://flixter-zoe-kramer.herokuapp.com/) to visit Flixter. 
 
+# Flixter
+
+### Overview
+
+A web application, built with Ruby on Rails, that uses the Stripe API to allow users to enroll in courses. Users are also able to upload their own courses/lessons as well as photos and videos. This application utilizes jQuery so users are able to rearrange their courses without having to refresh the page. 
+
+### Code Structure
+
+**Models** - 
+
+**Views** - 
+
+**Controllers** - 
+
+**Gemfiles** -
+
 # Set Up Vagrant
 
 Click [here](https://github.com/university-bootcamp/coding-environment/blob/master/windows-vagrant.md) to find the instructions for setting up Vagrant.
@@ -40,10 +56,3 @@ In a separate terminal, change the directory `cd /vagrant/src/flixter`
 
 Start your server by running `rails server -b 0.0.0.0 -p 3000`
 
-# Flixter
-
-### Overview
-
-A web application, built with Ruby on Rails, that uses the Stripe API to allow users to enroll in courses. Users are also able to upload their own courses/lessons as well as photos and videos. This application utilizes jQuery so users are able to rearrange their courses without having to refresh the page. 
-
-### Code Structure
