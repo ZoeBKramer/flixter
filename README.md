@@ -88,6 +88,30 @@ A web application, built with Ruby on Rails, that uses the Stripe API to allow u
 
 **Gemfiles**:
 
+[bootstrap gem](https://github.com/twbs/bootstrap-rubygem) - helps format the page
+
+[simple-form gem](https://github.com/plataformatec/simple_form) - creates the form in which data can be entered into
+
+[devise gem](https://github.com/plataformatec/devise) - we used this gem for the authentication of users
+
+[carrierwave gem](https://github.com/carrierwaveuploader/carrierwave) - provides a simple and extremely flexible way to upload files from Ruby applications
+
+[mini-magick gem](https://github.com/minimagick/minimagick) - MiniMagick gives you access to all the command line options ImageMagick has (found [here](http://www.imagemagick.org/script/command-line-options.php))
+
+[figaro gem](https://github.com/laserlemon/figaro) - this gem secures sensitive information (ie. secret keys) by not pushing it to Github, only production 
+
+[fog-aws gem](https://github.com/fog/fog-aws) - supports Amazon Web Services
+
+[carrierwave-aws gem](https://github.com/sorentwo/carrierwave-aws) - officially supported AWS-SDK library for S3 storage rather than relying on fog
+
+[stripe gem](https://github.com/stripe/stripe-ruby) - provides convenient access to the Stripe API from applications written in the Ruby language
+
+[ranked-model gem](https://github.com/mixonic/ranked-model) - row sorting library built for Rails 3, 4 and 5
+
+[jquery-ui-rails gem](https://github.com/jquery-ui-rails/jquery-ui-rails) - jQuery UI assets (JavaScripts, stylesheets, and images) for the Rails asset pipeline
+
+[font-awesome-rails](https://github.com/bokmann/font-awesome-rails) - adds a library of icons that can be used in the application
+
 # Set Up Vagrant
 
 Click [here](https://github.com/university-bootcamp/coding-environment/blob/master/windows-vagrant.md) to find the instructions for setting up Vagrant.
