@@ -8,13 +8,85 @@ A web application, built with Ruby on Rails, that uses the Stripe API to allow u
 
 ### Code Structure
 
-**Models** - 
+**Models**: 
 
-**Views** - 
+*Course Model* - This can be found in [`app\models\course.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/course.rb). This model handles the validations for entering in a new course. It also ties the course to the user that created it and allows it to have many sections and enrollments. We use the Carrierwave gem to handle the actual photo uploading, using AWS as our storage.
 
-**Controllers** - 
+*Section Model* - This can be found in [`app\models\section.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/section.rb). This model ties the section to the course it was created under and allows it to have many lessons. We use the RankedModel gem to store the sections in the order that the user places them in. This creates the `next_section` method that is used within the lesson model. 
 
-**Gemfiles** -
+*Lesson Model* - This can be found in [`app\models\lesson.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/lesson.rb). This model ties the lesson to the section it was created under and uses the Carrierwave gem to handle video uploading, using AWS as our storage. We use the RankedModel gem to store the lessons in the order that the user places them in. This model uses the `next_section` method in the `next_lesson` method that it created. This allows the user to click onto the next lesson, if there is one. If there isn't another lesson in that section, it allows the user to click onto the next section, if there is one. 
+
+*User Model* - This can be found in [`app\models\user.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/user.rb). This model allows the user to have many courses, images, enrollments, and enrolled courses. We use the devise gem in this model to handle user authentication. This model creates the `enrolled_in?` method to verify whether or not the user is enrolled in a specific course.
+
+*Enrollment Model* - This can be found in [`app\models\enrollment.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/enrollment.rb). This model ties enrollment to a user and a course.
+
+**Views**:
+
+**Controllers**: 
+
+*Courses Controller* - [`app\controllers\courses_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/courses_controller.rb)
+
+* Index Method: Displays all the courses on the page.
+
+* Show Method: Finds the course by ID.
+
+*Lessons Controller* - [`app\controllers\lessons_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/lessons_controller.rb)
+
+* `require_current_user_enrolled` Method: Authorizes that the current user logged in is enrolled in the course that the lesson is in. 
+
+* Show Method: This method exsists so that the lessons show page can be rendered.  
+
+*Enrollments Controller* - [`app\controllersenrollments_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/enrollments_controller.rb)
+
+* Create Method: Enrolls a user into a course. If the course that the user is enrolling in is premium (costs money), it will bring up the Stripe payment screen.  
+
+*Dashboards Controller* - [`app\controllers\dashboards_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/dashboards_controller.rb)
+
+* Show Method: This method exists so that the dashboards show page can be rendered.  
+
+*Static Pages Controller* - [`app\controllers\static_pages_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/static_pages_controller.rb)
+
+* Index Method: Displays a random course on the index page. 
+
+* Privacy Method: This method exists so that the privacy page can be rendered.
+
+* Team Method: This method exists so that the team page can be rendered.
+
+* Careers Method: This method exists so that the careers page can be rendered.
+
+*Instructor Courses Controller* - [`app\controllers\instructor\courses_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/instructor/courses_controller.rb)
+
+* New Method: Initializes the course object.
+
+* Create Method: Adds a new course, if valid, into the database.
+
+* Show Method: Initializes the section and lesson object.
+
+* `require_authorized_for_current_course` Method: Authorizes that the current user logged in is the same user that created the course.
+
+*Instructor Sections Controller* - [`app\controllers\instructor\sections_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/instructor/sections_controller.rb)
+
+* Create Method: Adds a new section to the course, if valid, into the database.
+
+* Update Method: Updates the section if the data entered is valid.
+
+* `require_authorized_for_current_section` Method: Authorizes that the current user logged in is the same user that created the  section.
+
+* `require_authorized_for_current_course` Method: Authorizes that the current user logged in is the same user that created the couse that the section is in. 
+
+*Instructor Lessons Controller* - [`app\controllers\instructor\lessons_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/instructor/lessons_controller.rb)
+
+* Create Method: Adds a new lesson to the section in the course, if valid, into the database
+
+* Update Method: Updates the lesson if the data entered is valid. 
+
+* `require_authorized_for_current_lesson` Method: Authorizes that the current user logged in is the same user that created the lesson.
+
+* `current_lesson` Method: Finds the lesson by ID.
+
+* `require_authorized_for_current_section` Method: Authorizes that the current user logged in is the same user that created the section that the lesson is in.
+
+**Gemfiles**:
 
 # Set Up Vagrant
 
