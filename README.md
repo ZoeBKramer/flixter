@@ -32,7 +32,7 @@ This displays all the courses with their course description on the page.
 
 ![The Courses Index View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Courses.png)
 
-*Course Show View* - [`app\views\courses\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/courses/show.html.erb)
+*Courses Show View* - [`app\views\courses\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/courses/show.html.erb)
 This displays the specific course that the user clicked on as well at the course's image, course cost, course description, course sections, and course lessons. If the current user logged in is the same user that created the course, an 'Administer' button will show on the page. If the current user logged in enrolled in the course, a badge will appear that says 'You Are Enrolled!'. 
 
 ![The Courses Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Section.png)
@@ -60,6 +60,9 @@ This displays the specific lesson that the user is on with the lesson's title, s
 This displays the current user's dashboard. This shows the courses that the user is enrolled in, as well as the courses that the user has created.
 
 ![The Dashboards Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Dashboard.png)
+
+*Header and Footer* - [`app\views\layouts\application.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/layouts/application.html.erb)
+This controls what is displayed in the header and footer on every page in the application.
 
 **Controllers**: 
 
