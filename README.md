@@ -22,6 +22,45 @@ A web application, built with Ruby on Rails, that uses the Stripe API to allow u
 
 **Views**:
 
+*Static Pages Index View* - [`app\views\static_pages\index.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/static_pages/index.html.erb)
+This displays the 'front page' of the website, as well as a random course that the user can click on to be brought to the course description page. 
+
+![The Static Pages Index View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Flixter.png)
+
+*Courses Index View* - [`app\views\courses\index.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/courses/index.html.erb)
+This displays all the courses with their course description on the page.
+
+![The Courses Index View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Courses.png)
+
+*Course Show View* - [`app\views\courses\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/courses/show.html.erb)
+This displays the specific course that the user clicked on as well at the course's image, course cost, course description, course sections, and course lessons. If the current user logged in is the same user that created the course, an 'Administer' button will show on the page. If the current user logged in enrolled in the course, a badge will appear that says 'You Are Enrolled!'. 
+
+![The Courses Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Section.png)
+
+*Instructor Courses New View* - [`app\views\instructor\courses\new.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/instructor/courses/new.html.erb)
+This creates the form that the user can enter a new course into. 
+
+![The Instructor Courses New View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/CreateCourse.png)
+
+*Instructor Courses Show View* - [`app\views\instructor\courses\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/instructor/courses/show.html.erb)
+This displays the current courses image, as well as all the sections and lessons in the course. The user, or the instructor of this course, is able to move the sections and lessons around (using DOM manipulation) to rearrange their order. This page also includes the modals for a new section as well as a new lesson.
+
+![The Instructor Courses Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/InstructorView.png)
+
+![Section Modal Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/CreateSection.png)
+
+![Lesson Modal Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/CreateLesson.png)
+
+*Lessons Show View* - [`app\views\lessons\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/lessons/show.html.erb)
+This displays the specific lesson that the user is on with the lesson's title, subtitle, and video. 
+
+![The Lessons Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Lesson.png)
+
+*Dashboards Show View* - [`app\views\dashboards\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/dashboards/show.html.erb)
+This displays the current user's dashboard. This shows the courses that the user is enrolled in, as well as the courses that the user has created.
+
+![The Dashboards Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Dashboard.png)
+
 **Controllers**: 
 
 *Courses Controller* - [`app\controllers\courses_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/courses_controller.rb)
