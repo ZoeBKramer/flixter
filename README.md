@@ -10,45 +10,55 @@ A web application, built with Ruby on Rails, that uses the Stripe API to allow u
 
 **Models**: 
 
-*Course Model* - [`app\models\course.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/course.rb). 
-This model handles the validations for entering in a new course. It also ties the course to the user that created it and allows it to have many sections and enrollments. We use the Carrierwave gem to handle the actual photo uploading, using AWS as our storage.
+*Course Model* - [`app\models\course.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/course.rb) 
 
-*Section Model* - [`app\models\section.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/section.rb). 
-This model ties the section to the course it was created under and allows it to have many lessons. We use the RankedModel gem to store the sections in the order that the user places them in. This creates the `next_section` method that is used within the lesson model. 
+Handles the validations for entering in a new course. It also ties the course to the user that created it and allows it to have many sections and enrollments. We use the Carrierwave gem to handle the actual photo uploading, using AWS as our storage.
 
-*Lesson Model* - [`app\models\lesson.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/lesson.rb). 
-This model ties the lesson to the section it was created under and uses the Carrierwave gem to handle video uploading, using AWS as our storage. We use the RankedModel gem to store the lessons in the order that the user places them in. This model uses the `next_section` method in the `next_lesson` method that it created. This allows the user to click onto the next lesson, if there is one. If there isn't another lesson in that section, it allows the user to click onto the next section, if there is one. 
+*Section Model* - [`app\models\section.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/section.rb)
 
-*User Model* - [`app\models\user.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/user.rb). 
-This model allows the user to have many courses, images, enrollments, and enrolled courses. We use the devise gem in this model to handle user authentication. This model creates the `enrolled_in?` method to verify whether or not the user is enrolled in a specific course.
+Ties the section to the course it was created under and allows it to have many lessons. We use the RankedModel gem to store the sections in the order that the user places them in. This creates the `next_section` method that is used within the lesson model. 
+
+*Lesson Model* - [`app\models\lesson.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/lesson.rb) 
+
+Ties the lesson to the section it was created under and uses the Carrierwave gem to handle video uploading, using AWS as our storage. We use the RankedModel gem to store the lessons in the order that the user places them in. This model uses the `next_section` method in the `next_lesson` method that it created. This allows the user to click onto the next lesson, if there is one. If there isn't another lesson in that section, it allows the user to click onto the next section, if there is one. 
+
+*User Model* - [`app\models\user.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/user.rb) 
+
+Allows the user to have many courses, images, enrollments, and enrolled courses. We use the devise gem in this model to handle user authentication. This model creates the `enrolled_in?` method to verify whether or not the user is enrolled in a specific course.
 
 *Enrollment Model* - [`app\models\enrollment.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/models/enrollment.rb).
-This model ties enrollment to a user and a course.
+
+Ties enrollment to a user and a course.
 
 **Views**:
 
 *Static Pages Index View* - [`app\views\static_pages\index.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/static_pages/index.html.erb)
-This displays the 'front page' of the website, as well as a random course that the user can click on to be brought to the course description page. 
+
+Displays the 'front page' of the website, as well as a random course that the user can click on to be brought to the course description page. 
 
 ![The Static Pages Index View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Flixter.png)
 
 *Courses Index View* - [`app\views\courses\index.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/courses/index.html.erb)
-This displays all the courses with their course description on the page.
+
+Displays all the courses with their course description on the page.
 
 ![The Courses Index View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Courses.png)
 
 *Courses Show View* - [`app\views\courses\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/courses/show.html.erb)
-This displays the specific course that the user clicked on as well at the course's image, course cost, course description, course sections, and course lessons. If the current user logged in is the same user that created the course, an 'Administer' button will show on the page. If the current user logged in enrolled in the course, a badge will appear that says 'You Are Enrolled!'. 
+
+Displays the specific course that the user clicked on as well at the course's image, course cost, course description, course sections, and course lessons. If the current user logged in is the same user that created the course, an 'Administer' button will show on the page. If the current user logged in enrolled in the course, a badge will appear that says 'You Are Enrolled!'. 
 
 ![The Courses Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Section.png)
 
 *Instructor Courses New View* - [`app\views\instructor\courses\new.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/instructor/courses/new.html.erb)
-This creates the form that the user can enter a new course into. 
+
+Creates the form that the user can enter a new course into. 
 
 ![The Instructor Courses New View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/CreateCourse.png)
 
 *Instructor Courses Show View* - [`app\views\instructor\courses\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/instructor/courses/show.html.erb)
-This displays the current courses image, as well as all the sections and lessons in the course. The user, or the instructor of this course, is able to move the sections and lessons around (using DOM manipulation) to rearrange their order. This page also includes the modals for a new section as well as a new lesson.
+
+Displays the current courses image, as well as all the sections and lessons in the course. The user, or the instructor of this course, is able to move the sections and lessons around (using DOM manipulation) to rearrange their order. This page also includes the modals for a new section as well as a new lesson.
 
 ![The Instructor Courses Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/InstructorView.png)
 
@@ -57,17 +67,20 @@ This displays the current courses image, as well as all the sections and lessons
 ![Lesson Modal Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/CreateLesson.png)
 
 *Lessons Show View* - [`app\views\lessons\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/lessons/show.html.erb)
-This displays the specific lesson that the user is on with the lesson's title, subtitle, and video. 
+
+Displays the specific lesson that the user is on with the lesson's title, subtitle, and video. 
 
 ![The Lessons Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Lesson.png)
 
 *Dashboards Show View* - [`app\views\dashboards\show.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/dashboards/show.html.erb)
-This displays the current user's dashboard. This shows the courses that the user is enrolled in, as well as the courses that the user has created.
+
+Displays the current user's dashboard. This shows the courses that the user is enrolled in, as well as the courses that the user has created.
 
 ![The Dashboards Show View Image](https://raw.githubusercontent.com/ZoeBKramer/flixter/master/app/assets/images/Flixter/Dashboard.png)
 
 *Header and Footer* - [`app\views\layouts\application.html.erb`](https://github.com/ZoeBKramer/flixter/blob/master/app/views/layouts/application.html.erb)
-This controls what is displayed in the header and footer on every page in the application.
+
+Controls what is displayed in the header and footer on every page in the application.
 
 **Controllers**: 
 
