@@ -96,7 +96,7 @@ Controls what is displayed in the header and footer on every page in the applica
 
 * Show Method: This method exsists so that the lessons show page can be rendered.  
 
-*Enrollments Controller* - [`app\controllersenrollments_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/enrollments_controller.rb)
+*Enrollments Controller* - [`app\controllers\enrollments_controller.rb`](https://github.com/ZoeBKramer/flixter/blob/master/app/controllers/enrollments_controller.rb)
 
 * Create Method: Enrolls a user into a course. If the course that the user is enrolling in is premium (costs money), it will bring up the Stripe payment screen.  
 
